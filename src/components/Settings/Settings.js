@@ -1,12 +1,8 @@
 import "./settings.css";
 import { useState } from "react";
 import Slider from "react-slick";
-
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 import { BsLightbulbFill, BsLightbulb } from "react-icons/bs";
-
-
-
 
 const navbar = [
   {
@@ -37,6 +33,14 @@ const navbar = [
 ];
 
 function Settings() {
+
+  
+  const [isYellow, setIsYellow] = useState(false);
+  const toggleColor = () => {
+    setIsYellow((prevIsYellow) => !prevIsYellow);
+  };
+
+
   const NextArrow = ({ onClick }) => {
     return (
       <div className="arrow next" onClick={onClick}>
@@ -67,6 +71,8 @@ function Settings() {
     beforeChange: (current, next) => setCardIndex(next),
   };
 
+  
+
   return (
     <>
     <div id="settings" className="settings">
@@ -77,7 +83,12 @@ function Settings() {
       <Slider className="linkStyle"  {...slidesSettings}>
         {navbar.map((card, idx) => (
           <div id={card.id} className={idx === cardIndex ? "slide activeSlide" : "slide"}>
-         {card.icon}
+         {/* {card.icon} */}
+         {isYellow ? (
+        <BsLightbulbFill size={230} color="yellow" onClick={toggleColor} />
+      ) : (
+        <BsLightbulb size={230} color="white" onClick={toggleColor} />
+      )}
             <h1>{card.name}</h1>
           </div>
         ))} 
