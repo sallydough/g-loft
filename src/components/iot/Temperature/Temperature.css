@@ -1,17 +1,22 @@
-
+#temperature {
+  align-items: center;
+  margin: 20rem 50rem ;
+}
 
 .app-container {
   height: 400px;
   width: 300px;
-  background: #2b5870;
+  background: #48CCAC;
   border-radius: 20px;
   box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.75);
+  transform: scale(2);
 }
 
 .temperature-display{
   display:flex;
   height: 60px;
   width: 60px;
+
 }
 
 
@@ -27,6 +32,7 @@
   font-size: 48px;
   border: 3px #ffffff solid;
   transition: 0.5s;
+  margin-left: 2.5rem;;
 }
 
 button {
