@@ -9,6 +9,8 @@ import Calendar from "./components/Calendar/Calendar";
 import Contact from "./components/Contacts/Contacts";
 import Settings from "./components/Settings/Settings";
 import Home from "./components/Home/Home";
+import Temperature from './components/iot/Temperature/Temperature'
+
 
 const navbar = [
   {
@@ -97,6 +99,7 @@ function App() {
           </Link>
         ))} 
       </Slider>
+      <Temperature />
 
 
       <Routes>
