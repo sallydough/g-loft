@@ -1,8 +1,10 @@
 import React from 'react'
+import './contacts.css'
 
 const Contacts = () => {
   return (
-    <div id="contacts">Contacts</div>
+    <div id="contacts">
+      Contacts</div>
   )
 }
 

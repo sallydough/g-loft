@@ -24,7 +24,7 @@ const navbar = [
   {
     id: '2',
     name: 'IoT Controls',
-    pathway: '/iotControls',
+    pathway: '/controls',
     icon: <FaHouseUser size={230} className="nav-icon" />,
   },
   {
