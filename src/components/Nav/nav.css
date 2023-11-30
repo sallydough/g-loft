@@ -14,6 +14,20 @@
   margin: auto;
 }
 
+.slider-call {
+  display: flex;
+  gap: 3rem;
+  flex-direction: column;
+
+}
+.call-help {
+  color: black;
+  padding: 20px;
+  border-radius: 4rem;
+  background-color: white ;
+  text-align: center;
+}
+
 .home-logo {
   display: flex;
   flex-direction: row;
