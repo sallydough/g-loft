@@ -2,7 +2,9 @@ import "./settings.css";
 import { useState } from "react";
 import Slider from "react-slick";
 
-import { FaArrowRight, FaArrowLeft, FaUser, FaHouseUser, FaAddressBook, FaCalendarAlt, FaCog, FaTv } from "react-icons/fa";
+import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
+import { BsLightbulbFill, BsLightbulb } from "react-icons/bs";
+
 
 
 
@@ -11,45 +13,34 @@ const navbar = [
     id: 1,
     name: "Bedroom",
     pathway:"/home",
-    icon: <FaUser size={230} className="nav-icon" />,
+    icon: <BsLightbulbFill size={230} className="nav-icon" />,
   },
   {
     id: 2,
     name: "Bathroom",
     pathway:"/iotControls",
-    icon: <FaHouseUser size={230} className="nav-icon"/>,
+    icon: <BsLightbulbFill size={230} className="nav-icon"/>,
   },
   {
     id: 3,
     name: "Dining Room",
     pathway:"/entertainment",
-    icon: <FaTv size={230} className="nav-icon"/>,
+    icon: <BsLightbulbFill size={230} className="nav-icon"/>,
   },
   {
     id: 4,
     name: "Kitchen",
     pathway:"/calendar",
-    icon: <FaCalendarAlt size={230} className="nav-icon"/>,
+    icon: <BsLightbulb size={230} className="nav-icon"/>,
   },
-  {
-    id: 5,
-    name: "Contacts",
-    pathway:"/contacts",
-    icon: <FaAddressBook size={230} className="nav-icon"/>,
-  },
-  {
-    id: 6,
-    name: "Settings",
-    pathway:"/settings",
-    icon: <FaCog size={230} className="nav-icon"/>,
-  }
+
 ];
 
 function Settings() {
   const NextArrow = ({ onClick }) => {
     return (
       <div className="arrow next" onClick={onClick}>
-        <FaArrowRight />
+        <FaArrowRight size={70} />
       </div>
     );
   };
@@ -57,7 +48,7 @@ function Settings() {
   const PrevArrow = ({ onClick }) => {
     return (
       <div className="arrow prev" onClick={onClick}>
-        <FaArrowLeft />
+        <FaArrowLeft size={70} />
       </div>
     );
   };
@@ -68,7 +59,7 @@ function Settings() {
     infinite: true,
     lazyLoad: true,
     speed: 300,
-    slidesToShow: 5,
+    slidesToShow: 3,
     centerMode: true,
     centerPadding: 0,
     nextArrow: <NextArrow />,
@@ -79,7 +70,11 @@ function Settings() {
   return (
     <>
     <div id="settings" className="settings">
-      <Slider {...slidesSettings}>
+      <div className="nav-bar-logo">
+        <h1>Logo and mini nav bar</h1>
+      </div>
+      <div className="slider">
+      <Slider className="linkStyle"  {...slidesSettings}>
         {navbar.map((card, idx) => (
           <div id={card.id} className={idx === cardIndex ? "slide activeSlide" : "slide"}>
          {card.icon}
@@ -87,7 +82,7 @@ function Settings() {
           </div>
         ))} 
       </Slider>
- 
+      </div>
     </div>
 
     </>
