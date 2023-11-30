@@ -49,7 +49,7 @@ const navbar = [
   }
 ];
 
-function App() {
+function Home() {
   const NextArrow = ({ onClick }) => {
     return (
       <div className="arrow next" onClick={onClick}>
@@ -115,4 +115,4 @@ function App() {
   );
 };
 
-export default App;
+export default Home;
