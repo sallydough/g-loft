@@ -11,6 +11,8 @@ import {
   FaTv,
 } from 'react-icons/fa';
 import { MdOutlineDevicesOther } from "react-icons/md";
+import { PiPhoneCallFill } from "react-icons/pi";
+
 
 import './nav.css';
 
@@ -139,7 +141,10 @@ if (userChoice) {
           </Link>
         ))}
       </Slider>
-      <div onClick={handleHelpClick} className='call-help'><h1>Call Help</h1></div>
+      <div onClick={handleHelpClick} className='call-help'>
+        <PiPhoneCallFill size={70}  />
+        <h1>Call Help</h1>
+        </div>
       </div>
     </section>
   );
