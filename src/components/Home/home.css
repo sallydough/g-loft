@@ -1,3 +1,44 @@
 #home {
   color: white;
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  width: 100%;
+  background-image: url("./medium-shot-happy-family-home.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: 5s;
+
+  animation-name: home;
+  animation-direction:normal;
+  animation-play-state: running;
+  animation-duration: 30s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode:backwards;
+  animation-iteration-count: infinite;
+}
+
+.logo-gl{
+  padding: 50px;
+}
+
+@keyframes home{
+
+20%{
+  background-image: url("./medium-shot-happy-family-home.jpg");
+}
+40%{
+  background-image: url("./senior3.jpg");
+}
+60%{
+  background-image: url("./senior2.jpg");
+}
+80%{
+  background-image: url("./senior1.jpg");
+}
+100%{
+  background-image: url("./medium-shot-happy-family-home.jpg");
+}
+
 }
