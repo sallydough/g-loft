@@ -78,3 +78,47 @@
   left: 0%;
   top: 50%;
 }
+
+/* contacts.css or your custom stylesheet */
+.custom-modal {
+  background-color: goldenrod;
+  border: 1px solid #ccc;
+  padding: 100px;
+  width: 900px; 
+  height:500px;
+  margin: 10px 20px 30px;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 2rem;
+}
+
+
+.custom-modal h2 {
+  font-size: 100px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.custom-modal button {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  margin-right: auto;
+  width: 200px;
+  height: 100px;
+  margin-right: 50px;
+}
+
+.custom-modal button:hover {
+  background-color: #45a049;
+}
+.centered-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
