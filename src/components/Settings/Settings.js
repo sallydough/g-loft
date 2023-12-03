@@ -13,7 +13,7 @@ const navbar = [
   },
   {
     id: 2,
-    name: "Bathroom",
+    name: "Bath",
     pathway:"/iotControls",
     icon: <BsLightbulbFill size={230} className="nav-icon"/>,
   },

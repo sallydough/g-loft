@@ -143,7 +143,7 @@ if (userChoice) {
       </Slider>
       <div onClick={handleHelpClick} className='call-help'>
         <PiPhoneCallFill size={70}  />
-        <h1>Call Help</h1>
+        <h1>Call Me</h1>
         </div>
       </div>
     </section>
