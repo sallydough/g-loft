@@ -12,6 +12,7 @@ import {
 } from 'react-icons/fa';
 import { MdOutlineDevicesOther } from "react-icons/md";
 import { PiPhoneCallFill } from "react-icons/pi";
+import { IoIosArrowDown } from "react-icons/io";
 
 
 import './nav.css';
@@ -19,7 +20,7 @@ import './nav.css';
 const navbar = [
   {
     id: '1',
-    name: 'Home',
+    name: 'Gallery',
     pathway: '/home',
     icon: <svg width="300" height="305" viewBox="0 0 600 603" fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect width="600" height="603" fill="#48CCAC"/>
@@ -34,7 +35,7 @@ const navbar = [
   },
   {
     id: '2',
-    name: 'IoT Controls',
+    name: 'Loft Controls',
     pathway: '/controls',
     icon: <MdOutlineDevicesOther size={230} className="nav-icon" />,
   },
@@ -141,10 +142,13 @@ if (userChoice) {
           </Link>
         ))}
       </Slider>
+      <div className="arrow-down">
+      <IoIosArrowDown size={90} className="arrow-down-gf" color="white" />
+      
       <div onClick={handleHelpClick} className='call-help'>
         <PiPhoneCallFill size={70}  />
-        <h1>Call Me</h1>
-        </div>
+        <h1>Call Help</h1>
+        </div></div>
       </div>
     </section>
   );

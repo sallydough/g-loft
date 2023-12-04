@@ -74,9 +74,9 @@ function Controls() {
   return (
     <>
     <div id="settings" className="settings">
-      <div className="nav-bar-logo">
-        <h1>Logo and mini nav bar</h1>
-      </div>
+      <Link to="/"><div className="nav-bar-logo">
+        <h1>Back to Menu</h1>
+      </div></Link>
       <div className="slider">
       <Slider className="linkStyle"  {...slidesSettings}>
         {navbar.map((card, idx) => (

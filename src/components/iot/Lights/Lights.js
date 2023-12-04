@@ -6,6 +6,7 @@ import { useState } from "react";
 import Slider from "react-slick";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 import { BsLightbulbFill, BsLightbulb } from "react-icons/bs";
+import {Link} from 'react-router-dom';
 
 const navbar = [
   {
@@ -237,9 +238,9 @@ incrimentalId++;
   return (
     <>
     <div id="lights" className="settings">
-      <div className="nav-bar-logo">
-        <h1>Logo and mini nav bar</h1>
-      </div>
+      <Link to="/controls"><div className="nav-bar-logo">
+        <h1>Back To Loft Controls</h1>
+      </div></Link>
       <div className="slider">
       <Slider className="linkStyle"  {...slidesSettings}>
         {navbar.map((card, idx) => (

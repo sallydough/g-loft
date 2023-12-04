@@ -18,25 +18,27 @@
 
 .slider-call {
   display: flex;
-  gap: 3rem;
   flex-direction: column;
 padding-top: 10rem;
 }
 .call-help {
-  color: black;
+  color: rgb(244, 255, 96);
   font-size: 45px;
   border-radius: 4rem;
-  background-color: rgb(244, 255, 96) ;
-  justify-content: center;
   align-items: center;
-  width: 30vw;
-  margin-left: 31%;
+  position: fixed;
+  left: 41%;
+  bottom: 1%;
   display: flex;
   flex-direction: row;
 }
 
-.call-help h1 {
-  margin:20px;
+
+.arrow-down {
+  display: flex;
+  flex-direction: column;
+  margin-left: 45%;
+
 }
 
 .home-logo {
