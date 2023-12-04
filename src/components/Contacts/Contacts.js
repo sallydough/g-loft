@@ -2,6 +2,7 @@ import { useState } from "react";
 import Slider from "react-slick";
 import { FaArrowRight, FaArrowLeft, FaUserAlt } from "react-icons/fa";
 import Modal from 'react-modal';
+import {Link} from 'react-router-dom';
 import './contacts.css'
 
 const navbar = [
@@ -111,9 +112,9 @@ const NextArrow = ({ onClick }) => {
   return (
     <>
     <div id="lights" className="settings">
-      <div className="nav-bar-logo">
-        <h1>Back To Loft Controls</h1>
-      </div>
+      <Link to="/"><div className="nav-bar-logo">
+        <h1>Back To Menu</h1>
+      </div></Link>
       <div className="slider">
       <Slider className="linkStyle"  {...slidesSettings}>
         {navbar.map((card, idx) => (
