@@ -1,65 +1,93 @@
-.app-container {
-  height: 400px;
-  width: 300px;
-  background: #2b5870;
-  border-radius: 20px;
-  box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.75);
-}
-
-.temperature-display{
-  display:flex;
-  height: 60px;
-  width: 60px;
-}
-
-
-.temperature-display {
+.main{
+  height: 100vh;
   display: flex;
-  border-radius: 50%;
-  color: #f0dada;
-  height: 220px;
-  width: 220px;
-  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.card-container {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 48px;
-  border: 3px #ffffff solid;
-  transition: 0.5s;
 }
 
-button {
-  border-radius: 100px;
-  height: 80px;
-  width: 80px;
-  font-size: 32px;
-  color: #ffffff;
-  background: rgb(105, 104, 104);
-  border: 2px #ffffff solid;
+.card {
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin: 10px;
 }
 
-button:hover {
-  background: rgb(184, 184, 184);
-  cursor: pointer;
-}
-
-button:focus {
-  outline: 0;
-}
-
-.button-container {
-  display: flex;
-  justify-content: space-evenly;
+.small-card {
+  display:flex;
+  flex-direction: column;
+  width: 200px;
+  height: 300px;
+  margin-top: 40px;
+  margin-bottom: 0px;
+  border-radius: 50px;
+  justify-content: center;
   align-items: center;
+  background: #48CCAC;
+  font-size: 10px;
+
 }
 
-.neutral {
-  background: rgb(184, 184, 184);
+.big-card {
+  display:flex;
+  flex-direction:column;
+ /*  width: 290px;
+  height: 380px; */
+  height: 35rem;
+  width: 25rem;
+  border-radius: 70px;
+  justify-content: center;
+  align-items: center;
+  background: #48CCAC;
+
+
+} 
+
+.arrow-icon {
+  cursor: pointer;
+  margin-top: 180px;
+  align-items: end;
+  height: 5%;
+  width: 5rem;
+  color: #fff;
+}
+
+.arrow-icon:hover {
+  color: #68edff;
+}
+
+.icons{
+  display:flex;
+  direction: column;
+}
+h1{
+  margin:0px;
+}
+.inside-icons{
+  margin-top: 90px;
+}
+ 
+.temperature-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  color: #f0dada;
+  height: 80px;
+  width: 350px;
+  font-size: 55px;
+  /* border: 3px #ffffff solid; */
+  margin-bottom: 30px;
+  margin-top: 30px;
+  background: grey;
+}
+.hot {
+  color: Red; /* Change the color as per your preference */
 }
 
 .cold {
-  background: #035aa6;
-}
-
-.hot {
-  background: #ff5200;
+  color: darkblue; /* Change the color as per your preference */
 }
