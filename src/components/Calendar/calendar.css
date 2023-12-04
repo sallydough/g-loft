@@ -1,9 +1,14 @@
 #calendar {
   color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-content: center;
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  width: 100%;
+}
+
+#calendar img{
+width: 90%;
+margin-left: 5rem;;
 }
 
 .schedule-container{

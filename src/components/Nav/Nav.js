@@ -68,7 +68,6 @@ const navbar = [
 function Nav() {
 
 // handle Help Button
-
 const handleHelpClick = () => {
   const phoneNumber = '+1234556778';
   const userChoice = window.confirm('Do you want to call or send an SMS?');
@@ -143,7 +142,7 @@ if (userChoice) {
         ))}
       </Slider>
       <div className="arrow-down">
-      <IoIosArrowDown size={90} className="arrow-down-gf" color="white" />
+      <IoIosArrowDown size={90} className="arrow" color="white" />
       
       <div onClick={handleHelpClick} className='call-help'>
         <PiPhoneCallFill size={70}  />

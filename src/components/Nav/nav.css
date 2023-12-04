@@ -19,7 +19,7 @@
 .slider-call {
   display: flex;
   flex-direction: column;
-  padding-top: 10rem;
+  padding-top: 9rem;
 }
 .call-help {
   color: rgb(244, 255, 96);
@@ -27,11 +27,19 @@
   border-radius: 4rem;
   align-items: center;
   position: fixed;
-  left: 38%;
-  bottom: 1%;
+  left: 37%;
+  bottom: 5%;
   display: flex;
   flex-direction: row;
   gap:1rem;
+  box-shadow: -1px 3px 15px 15px rgba(161,150,103,0.87);
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 5px;
+}
+
+.call-help h1{
+  margin: 1rem;
 }
 
 

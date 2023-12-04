@@ -38,6 +38,20 @@ const navbar = [
 
 function Controls() {
 
+  // handle Help Button
+const handleHelpClick = () => {
+  const phoneNumber = '+1234556778';
+  const userChoice = window.confirm('Do you want to call or send an SMS?');
+
+if (userChoice) {
+  window.location.href = `tel:${phoneNumber}`;
+} else {
+  window.location.href = `sms:${phoneNumber}`;
+}
+  const telUrl = `tel:${phoneNumber}`;
+  window.location.href = telUrl;
+};
+
 
   const NextArrow = ({ onClick }) => {
     return (
