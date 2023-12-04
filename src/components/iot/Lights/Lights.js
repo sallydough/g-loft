@@ -238,7 +238,7 @@ incrimentalId++;
   return (
     <>
     <div id="lights" className="settings">
-      <Link to="/controls"><div className="nav-bar-logo">
+      <Link to="/controls" className="linkStyle"><div className="nav-bar-logo">
         <h1>Back To Loft Controls</h1>
       </div></Link>
       <div className="slider">

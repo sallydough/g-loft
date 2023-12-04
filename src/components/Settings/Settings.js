@@ -2,43 +2,41 @@ import "./settings.css";
 import { useState } from "react";
 import Slider from "react-slick";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
-import { BsLightbulbFill, BsLightbulb } from "react-icons/bs";
+import { RxFontSize } from "react-icons/rx";
+import { GrLanguage, GrMore } from "react-icons/gr";
+import { IoIosColorPalette } from "react-icons/io";
+import {Link} from 'react-router-dom';
 
 const navbar = [
   {
     id: 1,
-    name: "Bedroom",
+    name: `Change Font Size`,
     pathway:"/home",
-    icon: <BsLightbulbFill size={230} className="nav-icon" />,
+    icon: <RxFontSize size={230} className="nav-icon" />,
   },
   {
     id: 2,
-    name: "Bath",
-    pathway:"/iotControls",
-    icon: <BsLightbulbFill size={230} className="nav-icon"/>,
+    name: "Change Language",
+    pathway:"/controls",
+    icon: <GrLanguage size={230} className="nav-icon"/>,
   },
   {
     id: 3,
-    name: "Dining Room",
+    name: "Change Theme",
     pathway:"/entertainment",
-    icon: <BsLightbulbFill size={230} className="nav-icon"/>,
+    icon: <IoIosColorPalette size={230} className="nav-icon"/>,
   },
   {
     id: 4,
-    name: "Kitchen",
+    name: "More",
     pathway:"/calendar",
-    icon: <BsLightbulb size={230} className="nav-icon"/>,
+    icon: <GrMore size={230} className="nav-icon"/>,
   },
 
 ];
 
 function Settings() {
 
-  
-  const [isYellow, setIsYellow] = useState(false);
-  const toggleColor = () => {
-    setIsYellow((prevIsYellow) => !prevIsYellow);
-  };
 
 
   const NextArrow = ({ onClick }) => {
@@ -76,19 +74,19 @@ function Settings() {
   return (
     <>
     <div id="settings" className="settings">
-      <div className="nav-bar-logo">
-        <h1>Logo and mini nav bar</h1>
-      </div>
+      <Link to="/" className="linkStyle"><div className="nav-bar-logo">
+        <h1>Back to Menu</h1>
+      </div></Link>
       <div className="slider">
       <Slider className="linkStyle"  {...slidesSettings}>
         {navbar.map((card, idx) => (
           <div id={card.id} className={idx === cardIndex ? "slide activeSlide" : "slide"}>
-         {/* {card.icon} */}
-         {isYellow ? (
+         {card.icon}
+         {/* {isYellow ? (
         <BsLightbulbFill size={230} color="yellow" onClick={toggleColor} />
       ) : (
         <BsLightbulb size={230} color="white" onClick={toggleColor} />
-      )}
+      )} */}
             <h1>{card.name}</h1>
           </div>
         ))} 

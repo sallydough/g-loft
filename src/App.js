@@ -14,8 +14,8 @@ import Home from './components/Home/Home';
 
 const App = () => {
   return (
-    <>
- 
+    // <div id="App">
+ <>
     <Router>
       <Routes>
         <Route path="/" element={<Nav />} />
@@ -32,6 +32,7 @@ const App = () => {
 
       </Routes>
     </Router>
+    {/*  </div> */}
     </>
   );
 };

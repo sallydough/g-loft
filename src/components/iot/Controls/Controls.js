@@ -74,7 +74,7 @@ function Controls() {
   return (
     <>
     <div id="settings" className="settings">
-      <Link to="/"><div className="nav-bar-logo">
+      <Link to="/" className="linkStyle"><div className="nav-bar-logo">
         <h1>Back to Menu</h1>
       </div></Link>
       <div className="slider">

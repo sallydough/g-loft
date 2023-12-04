@@ -34,6 +34,13 @@ const navbar = [
     number: +4031235678,
     icon: <FaUserAlt size={230} className="nav-icon"/>,
   },
+  {
+    id: 5,
+    name: "Lucy",
+    pathway:"/calendar",
+    number: +4031235678,
+    icon: <FaUserAlt size={230} className="nav-icon"/>,
+  },
 
 ];
 // Custom hook for handling the modal
@@ -112,7 +119,7 @@ const NextArrow = ({ onClick }) => {
   return (
     <>
     <div id="lights" className="settings">
-      <Link to="/"><div className="nav-bar-logo">
+      <Link to="/" className="linkStyle" ><div className="nav-bar-logo">
         <h1>Back To Menu</h1>
       </div></Link>
       <div className="slider">

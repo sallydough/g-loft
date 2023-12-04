@@ -1,10 +1,19 @@
-import React from 'react'
+
 import './calendar.css'
+import React from 'react'
+import {Link} from 'react-router-dom';
+import pic1 from './gf-calendar1.png';
+
+
+
 const Calendar = () => {
+
+  // handle Help Button
+
   return (
-    <div id="calendar">
-      <h1>Calendar</h1>
-    </div>
+    <Link to="/" className="linkStyle"><div id="calendar">
+      <img src={pic1} alt="" /></div></Link>
+     
   )
 }
 

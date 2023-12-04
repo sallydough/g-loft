@@ -37,7 +37,7 @@ const navbar = [
     id: '2',
     name: 'Loft Controls',
     pathway: '/controls',
-    icon: <MdOutlineDevicesOther size={230} className="nav-icon" />,
+    icon: <MdOutlineDevicesOther size={300} className="nav-icon" />,
   },
   {
     id: '3',
@@ -109,7 +109,7 @@ if (userChoice) {
     speed: 300,
     slidesToShow: 3,
     centerMode: true,
-    centerPadding: 0,
+    centerPadding: 3,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     beforeChange: (current, next) => setCardIndex(next),
