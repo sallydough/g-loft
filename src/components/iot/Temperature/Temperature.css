@@ -49,8 +49,6 @@
 .big-card {
   display:flex;
   flex-direction:column;
- /*  width: 290px;
-  height: 380px; */
   height: 35rem;
   width: 25rem;
   border-radius: 70px;
@@ -94,7 +92,6 @@ h1{
   height: 80px;
   width: 350px;
   font-size: 55px;
-  /* border: 3px #ffffff solid; */
   margin-bottom: 30px;
   margin-top: 30px;
   background: rgb(241, 241, 32);
@@ -106,3 +103,4 @@ h1{
 .cold {
   color: darkblue; /* Change the color as per your preference */
 }
+
