@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import "./Temperature.css";
-import { FaArrowRight, FaArrowLeft, FaArrowDown } from "react-icons/fa";
+import { FaArrowRight, FaArrowLeft, } from "react-icons/fa";
 import { PiPhoneCallFill } from "react-icons/pi";
 import {Link} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCirclePlus, faCircleMinus } from '@fortawesome/free-solid-svg-icons';
 
 const Temperature = () => {
+ 
 
   // handle Help Button
   const handleHelpClick = () => {

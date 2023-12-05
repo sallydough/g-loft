@@ -1,3 +1,10 @@
 #entertainment {
   color: white;
+  width: 60%;
+  margin: auto;
+  text-align: center;
+}
+
+iframe {
+  margin-left: 5rem;
 }

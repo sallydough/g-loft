@@ -6,7 +6,6 @@ import { FaAddressBook, FaCalendarAlt, FaCog, FaTv } from "react-icons/fa";
 import { MdOutlineDevicesOther } from "react-icons/md";
 import { PiPhoneCallFill } from "react-icons/pi";
 import {
-  IoIosArrowDown,
   IoIosArrowBack,
   IoIosArrowForward,
 } from "react-icons/io";

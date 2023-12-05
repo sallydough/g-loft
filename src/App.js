@@ -11,15 +11,22 @@ import Lights from './components/iot/Lights/Lights';
 import Temperature from './components/iot/Temperature/Temperature';
 import Lock from './components/iot/Lock/Lock';
 import Home from './components/Home/Home';
+import {useState} from 'react';
+
 
 const App = () => {
+       // Youtube API
+       const [videoId, setVideoId] = useState('pIGzPsfnpoc'); 
+       const apiKey = 'AIzaSyBvtUPtaB0bdXlWcX4w4Jwp1uGvqX7-uRg'; 
+
   return (
     // <div id="App">
- <>
+
+    <>
     <Router>
       <Routes>
         <Route path="/" element={<Nav />} />
-        <Route path="/entertainment" element={<Entertainment />} />
+        <Route path="/entertainment" element={<Entertainment apiKey={apiKey} videoId={videoId} />} />
         <Route path="/calendar" element={<Calendar />} />
         <Route path="/contacts" element={<Contacts />} />
         <Route path="/settings" element={<Settings />} />
@@ -29,7 +36,6 @@ const App = () => {
         <Route path="/lock" element={<Lock />} />
         <Route path="/home" element={<Home />} />
         
-
       </Routes>
     </Router>
     {/*  </div> */}
