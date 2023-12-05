@@ -1,10 +1,14 @@
 import { useState } from "react";
 import Slider from "react-slick";
-import { FaArrowRight, FaArrowLeft, FaUserAlt } from "react-icons/fa";
+import { FaUserAlt } from "react-icons/fa";
 import Modal from 'react-modal';
 import {Link} from 'react-router-dom';
 import { PiPhoneCallFill } from "react-icons/pi";
 import './contacts.css'
+import {
+  IoIosArrowBack,
+  IoIosArrowForward,
+} from "react-icons/io";
 
 const navbar = [
   {
@@ -108,7 +112,7 @@ function Contacts() {
 const NextArrow = ({ onClick }) => {
     return (
       <div className="arrow next" onClick={onClick}>
-        <FaArrowRight size={70} />
+        <IoIosArrowForward size={90} />
       </div>
     );
   };
@@ -116,7 +120,7 @@ const NextArrow = ({ onClick }) => {
   const PrevArrow = ({ onClick }) => {
     return (
       <div className="arrow prev" onClick={onClick}>
-        <FaArrowLeft size={70} />
+       <IoIosArrowBack size={90} />
       </div>
     );
   };

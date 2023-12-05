@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import "./Temperature.css";
-import { FaArrowRight, FaArrowLeft, } from "react-icons/fa";
 import { PiPhoneCallFill } from "react-icons/pi";
 import {Link} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCirclePlus, faCircleMinus } from '@fortawesome/free-solid-svg-icons';
-
+import axios from 'axios';
+import {
+  IoIosArrowBack,
+  IoIosArrowForward,
+} from "react-icons/io";
 const Temperature = () => {
  
 
   // handle Help Button
-  const handleHelpClick = () => {
+  const handleHelpVideo = () => {
     const phoneNumber = "+1234556778";
     const userChoice = window.confirm("Do you want to call or send an SMS?");
 
@@ -22,6 +25,78 @@ const Temperature = () => {
     const telUrl = `tel:${phoneNumber}`;
     window.location.href = telUrl;
   };
+
+  // twilio call function
+const makeTwilioCall = async () => {
+  try {
+    const twilioSid = 'API key token here';
+    const twilioAuthToken = 'access token put here';
+    const destinationPhoneNumber = '+14036901549';
+    const twilioPhoneNumber = '+18624374931';
+
+    const apiEndpoint = `https://api.twilio.com/2010-04-01/Accounts/${twilioSid}/Calls.json`;
+
+    const credentials = `${twilioSid}:${twilioAuthToken}`;
+    const base64Credentials = btoa(credentials); 
+
+    const response = await axios.post(
+      apiEndpoint,
+      new URLSearchParams({
+        To: destinationPhoneNumber,
+        From: twilioPhoneNumber,
+        Url: 'https://handler.twilio.com/twiml/EHbfd029cc3862c7fec28b9760ff15b078', // Replace with your TwiML Bin URL or server endpoint
+        Method: 'POST',
+      }),
+      {
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'Authorization': `Basic ${base64Credentials}`,
+        },
+      }
+    );
+
+    console.log(response.data);
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+const handleHelpClick = async () => {
+  try {
+    const twilioSid = 'your_twilio_sid';
+    const twilioAuthToken = 'your_twilio_auth_token';
+    const destinationPhoneNumber = 'recipient_phone_number';
+    const twilioPhoneNumber = 'your_twilio_phone_number';
+
+    const apiEndpoint = `https://api.twilio.com/2010-04-01/Accounts/${twilioSid}/Calls.json`;
+
+    const response = await axios.post(
+      apiEndpoint,
+      new URLSearchParams({
+        To: destinationPhoneNumber,
+        From: twilioPhoneNumber,
+        Url: 'http://your-server.com/twiml', // Replace with your TwiML Bin URL or server endpoint
+        Method: 'POST',
+      }),
+      {
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'Authorization': 'Basic ' + Buffer.from(`${twilioSid}:${twilioAuthToken}`).toString('base64'),
+        },
+      }
+    );
+
+    console.log(response.data);
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+const makeTwilioHelpCall = () => {
+handleHelpClick();
+makeTwilioCall();
+handleHelpVideo();
+}
 
 // change temp function
   const [temperatureValue, setTemperatureValue] = useState(20);
@@ -114,13 +189,13 @@ const Temperature = () => {
         {createCard('Decrease Temperature', faCircleMinus, decreaseTemperature, 'small-card', '8x')}
 
         <section className="arrow-icon" onClick={decreaseTemperature}>
-          <FaArrowLeft size="1x" />
+          <IoIosArrowBack size="1x" />
         </section>
 
         {createCard('Temperature',<RemoteLogo />, null, 'big-card', '7x')}
 
         <section className="arrow-icon" onClick={increaseTemperature}>
-        <FaArrowRight size="0.5x" />
+        <IoIosArrowForward size="0.5x" />
         </section>
 
         {createCard('Increase Temperature', faCirclePlus, increaseTemperature, 'small-card', '8x')}
@@ -129,7 +204,7 @@ const Temperature = () => {
         {/* <div className="arrow-down">
           <FaArrowDown size={90} className="arrow-down-gf" color="white" />
         </div> */}
-      <div onClick={handleHelpClick} className="call-help-1">
+      <div onClick={makeTwilioHelpCall} className="call-help-1">
             <PiPhoneCallFill size={70} />
             <h1>Call Support</h1>
           </div>

@@ -13,11 +13,11 @@ import Lock from './components/iot/Lock/Lock';
 import Home from './components/Home/Home';
 import {useState} from 'react';
 
-
 const App = () => {
        // Youtube API
        const [videoId, setVideoId] = useState('Ms1uYc28pD4'); 
        const apiKey = 'AIzaSyBvtUPtaB0bdXlWcX4w4Jwp1uGvqX7-uRg'; 
+
 
   return (
     // <div id="App">

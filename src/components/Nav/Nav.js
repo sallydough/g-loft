@@ -113,8 +113,8 @@ function Nav() {
   // twilio call function
 const makeTwilioCall = async () => {
   try {
-    const twilioSid = 'AC2fb69e8e2d9680ecff0ed479789fdb24';
-    const twilioAuthToken = 'd066ba4a33b167ac03cd77af64666df3';
+    const twilioSid = 'API key token here';
+    const twilioAuthToken = 'access token put here';
     const destinationPhoneNumber = '+14036901549';
     const twilioPhoneNumber = '+18624374931';
 
