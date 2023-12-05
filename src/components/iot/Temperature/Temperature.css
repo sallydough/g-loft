@@ -1,70 +1,93 @@
-#temperature {
-  align-items: center;
-  margin: 20rem 70rem;
-}
-
-.app-container {
+.main{
+  height: 100vh;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  height: 400px;
-  width: 300px;
-  background: #48CCAC;
-  border-radius: 20px;
-  box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.75);
-  transform: scale(2);
+}
+.card-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+.card {
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin: 10px;
+}
+
+.small-card {
+  display:flex;
+  flex-direction: column;
+  width: 200px;
+  height: 300px;
+  margin-top: 40px;
+  margin-bottom: 0px;
+  border-radius: 50px;
+  justify-content: center;
+  align-items: center;
+  background: #48CCAC;
+  font-size: 10px;
+
+}
+
+.big-card {
+  display:flex;
+  flex-direction:column;
+ /*  width: 290px;
+  height: 380px; */
+  height: 35rem;
+  width: 25rem;
+  border-radius: 70px;
+  justify-content: center;
+  align-items: center;
+  background: #48CCAC;
+
+
+} 
+
+.arrow-icon {
+  cursor: pointer;
+  margin-top: 180px;
+  align-items: end;
+  height: 5%;
+  width: 5rem;
+  color: #fff;
+}
+
+.arrow-icon:hover {
+  color: #68edff;
+}
+
+.icons{
+  display:flex;
+  direction: column;
+}
+h1{
+  margin:0px;
+}
+.inside-icons{
+  margin-top: 90px;
+}
+ 
 .temperature-display {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  text-align: center;
   justify-content: center;
-  border-radius: 50%;
+  border-radius: 50px;
   color: #f0dada;
-  height: 220px;
-  width: 220px;
-  text-align: center;
-  font-size: 48px;
+  height: 80px;
+  width: 350px;
+  font-size: 55px;
   /* border: 3px #ffffff solid; */
-  transition: 0.5s;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  background: grey;
 }
-
-.nav-icon {
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-button {
-  border-radius: 100px;
-  height: 50px;
-  width: 50px;
-  font-size: 32px;
-  color: #ffffff;
-  background: #455c56;
-  border: 2px #ffffff solid;
-  margin-bottom: 20px;
-}
-
-button:hover {
-  background: rgb(184, 184, 184);
-  cursor: pointer;
-}
-
-button:focus {
-  outline: 0;
-}
-
-.button-container {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  gap: 2rem;
-}
-
 .hot {
-  color: #ebe00b; /* Change the color as per your preference */
+  color: Red; /* Change the color as per your preference */
+}
+
+.cold {
+  color: darkblue; /* Change the color as per your preference */
 }

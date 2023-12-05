@@ -21,6 +21,32 @@
   font-size: 30px;
 }
 
+.slider-call-1 {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+}
+.call-help-1 {
+  color: rgb(244, 255, 96);
+  font-size: 30px;
+  border-radius: 4rem;
+  align-items: center;
+  position: fixed;
+  left: 37%;
+  bottom: 5%;
+  display: flex;
+  flex-direction: row;
+  gap:1rem;
+  box-shadow: -1px 3px 15px 15px rgba(161,150,103,0.87);
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 5px;
+}
+
+.call-help h1{
+  margin: 1rem;
+}
+
 .slide {
   display:flex;
   text-align: center;

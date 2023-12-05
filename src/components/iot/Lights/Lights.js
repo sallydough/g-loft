@@ -6,6 +6,7 @@ import { useState } from "react";
 import Slider from "react-slick";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 import { BsLightbulbFill, BsLightbulb } from "react-icons/bs";
+import { PiPhoneCallFill } from "react-icons/pi";
 import {Link} from 'react-router-dom';
 
 const navbar = [
@@ -37,7 +38,19 @@ const navbar = [
 ];
 
 function Lights() {
+  // handle Help Button
+  const handleHelpClick = () => {
+    const phoneNumber = "+1234556778";
+    const userChoice = window.confirm("Do you want to call or send an SMS?");
 
+    if (userChoice) {
+      window.location.href = `tel:${phoneNumber}`;
+    } else {
+      window.location.href = `sms:${phoneNumber}`;
+    }
+    const telUrl = `tel:${phoneNumber}`;
+    window.location.href = telUrl;
+  };
   
   const [isYellow, setIsYellow] = useState(false);
   const toggleColor = () => {
@@ -241,6 +254,7 @@ incrimentalId++;
       <Link to="/controls" className="linkStyle"><div className="nav-bar-logo">
         <h1>Back To Loft Controls</h1>
       </div></Link>
+      <div className="slider-call-1">
       <div className="slider">
       <Slider className="linkStyle"  {...slidesSettings}>
         {navbar.map((card, idx) => (
@@ -255,6 +269,11 @@ incrimentalId++;
           </div>
         ))} 
       </Slider>
+      </div>
+      <div onClick={handleHelpClick} className='call-help-1'>
+<PiPhoneCallFill size={70}  />
+<h1>Call Support</h1>
+</div>
       </div>
     </div>
 

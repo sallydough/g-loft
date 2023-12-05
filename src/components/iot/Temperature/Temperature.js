@@ -1,10 +1,29 @@
 import React, { useState, useEffect } from 'react';
-import './Temperature.css';
-import { FaTemperatureHigh } from 'react-icons/fa';
+import "./Temperature.css";
+import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCirclePlus, faCircleMinus, faThermometer } from '@fortawesome/free-solid-svg-icons';
 
 const Temperature = () => {
-  const [temperatureValue, setTemperatureValue] = useState(10);
-  const [temperatureColor, setTemperatureColor] = useState("cold");
+  const [temperatureValue, setTemperatureValue] = useState(20);
+  const [temperatureColor, setTemperatureColor] = useState('normal');
+
+  const createCard = (title, icon, onClick, size, iconSize = '1x') => (
+    <section className={`card ${size}`} onClick={onClick}>
+      {title && <h1>{title}</h1>}
+      {size === 'big-card' && (
+        <div className={`temperature-display ${temperatureColor}`}>
+          {temperatureValue}°C {temperatureColor}
+        </div>
+      )}
+      {icon && (
+        <div className="inside-icons">
+          <FontAwesomeIcon  icon={icon} size={iconSize} />
+        </div>
+      )}
+    </section>
+
+  );
 
   const increaseTemperature = () => {
     if (temperatureValue === 30) return;
@@ -18,19 +37,21 @@ const Temperature = () => {
     setTemperatureValue(newTemperature);
   };
 
+
   const decreaseTemperature = () => {
     if (temperatureValue === 0) return;
     const newTemperature = temperatureValue - 1;
-
-    if (newTemperature < 15) {
+  
+    if (newTemperature <= 15) {
       setTemperatureColor('cold');
+    } else {
+      setTemperatureColor('normal');
     }
-
+  
     setTemperatureValue(newTemperature);
   };
-
+  
   const sendSMS = (to, body) => {
-    // Make an HTTP request to your server-side endpoint
     fetch('http://localhost:3001/send-sms', {
       method: 'POST',
       headers: {
@@ -38,28 +59,30 @@ const Temperature = () => {
       },
       body: JSON.stringify({ to, body }),
     })
-    .then(response => response.json())
-    .then(data => console.log(data))
-    .catch(error => console.error(error));
+      .then(response => response.json())
+      .then(data => console.log(data))
+      .catch(error => console.error(error));
   };
 
   useEffect(() => {
-    // You can add additional logic here to handle other side effects
   }, [temperatureColor]);
 
   return (
-    <div id="temperature">
-      <div className='app-container'>
-        <div className={`temperature-display ${temperatureColor}`}>
-          <div></div>
-          <div>
-            {temperatureValue + "°C"} <FaTemperatureHigh size={150} className={`nav-icon ${temperatureColor}`} />
-          </div>
-        </div>
-        <div className='button-container'>
-          <button onClick={() => increaseTemperature()}>+</button>
-          <button onClick={() => decreaseTemperature()}>-</button>
-        </div>
+    <div className="main">
+      <div className="card-container">
+        {createCard('Decrease Temperature', faCircleMinus, decreaseTemperature, 'small-card', '10x')}
+
+        <section className="arrow-icon" onClick={decreaseTemperature}>
+        <FaArrowLeft size="1x" />
+        </section>
+
+        {createCard('Temperature', faThermometer , null, 'big-card', '5x')}
+
+        <section className="arrow-icon" onClick={increaseTemperature}>
+        <FaArrowRight size="0.5x" />
+        </section>
+
+        {createCard('Increase Temperature', faCirclePlus, increaseTemperature, 'small-card', '10x')}
       </div>
     </div>
   );
