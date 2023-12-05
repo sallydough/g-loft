@@ -4,6 +4,7 @@ import { FaArrowRight, FaArrowLeft, FaLock } from "react-icons/fa";
 import { BsLightbulbFill} from "react-icons/bs";
 import { LiaTemperatureHighSolid } from "react-icons/lia";
 import { GrMore } from "react-icons/gr";
+import { PiPhoneCallFill } from "react-icons/pi";
 import {Link} from 'react-router-dom';
 
 
@@ -37,6 +38,8 @@ const navbar = [
 ];
 
 function Controls() {
+
+
 
   // handle Help Button
 const handleHelpClick = () => {
@@ -91,6 +94,7 @@ if (userChoice) {
       <Link to="/" className="linkStyle"><div className="nav-bar-logo">
         <h1>Back to Menu</h1>
       </div></Link>
+      <div className="slider-call-2">
       <div className="slider">
       <Slider className="linkStyle"  {...slidesSettings}>
         {navbar.map((card, idx) => (
@@ -101,6 +105,11 @@ if (userChoice) {
           </div></Link>
         ))} 
       </Slider>
+      </div>
+      <div onClick={handleHelpClick} className="call-help-1">
+            <PiPhoneCallFill size={70} />
+            <h1>Call Support</h1>
+          </div>
       </div>
     </div>
 

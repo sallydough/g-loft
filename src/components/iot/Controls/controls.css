@@ -22,6 +22,15 @@
   margin-top: 30px;
   }
 
+  .slider-call-2 {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
+  }
+  
+  .call-help h1{
+    margin: 1rem;
+  }
 
 .slide {
   display:flex;

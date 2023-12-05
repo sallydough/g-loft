@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import { FaArrowRight, FaArrowLeft, FaUserAlt } from "react-icons/fa";
 import Modal from 'react-modal';
 import {Link} from 'react-router-dom';
+import { PiPhoneCallFill } from "react-icons/pi";
 import './contacts.css'
 
 const navbar = [
@@ -66,6 +67,22 @@ const useContactModal = () => {
 };
 
 function Contacts() {
+
+  // handle Help Button
+  const handleHelpClick = () => {
+    const phoneNumber = "+1234556778";
+    const userChoice = window.confirm("Do you want to call or send an SMS?");
+
+    if (userChoice) {
+      window.location.href = `tel:${phoneNumber}`;
+    } else {
+      window.location.href = `sms:${phoneNumber}`;
+    }
+    const telUrl = `tel:${phoneNumber}`;
+    window.location.href = telUrl;
+  };
+
+
   const { modalIsOpen, selectedContact, openModal, closeModal } = useContactModal();
   const [cardIndex, setCardIndex] = useState(0);
 //call using window
@@ -122,6 +139,7 @@ const NextArrow = ({ onClick }) => {
       <Link to="/" className="linkStyle" ><div className="nav-bar-logo">
         <h1>Back To Menu</h1>
       </div></Link>
+      <div className="slider-call-1">
       <div className="slider">
       <Slider className="linkStyle"  {...slidesSettings}>
         {navbar.map((card, idx) => (
@@ -131,6 +149,11 @@ const NextArrow = ({ onClick }) => {
              </div>
         ))} 
       </Slider>
+      </div>
+      <div onClick={handleHelpClick} className="call-help-1">
+            <PiPhoneCallFill size={70} />
+            <h1>Call Support</h1>
+          </div>
       </div>
     </div>
     <Modal

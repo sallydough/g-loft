@@ -40,7 +40,8 @@
   box-shadow: -1px 3px 15px 15px rgba(161,150,103,0.87);
   padding-left: 30px;
   padding-right: 30px;
-  padding-bottom: 5px;
+  padding-bottom: 20px;
+  padding-top: 20px;
 }
 
 .call-help h1{
