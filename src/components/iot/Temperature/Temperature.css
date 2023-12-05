@@ -1,13 +1,23 @@
 .main{
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-container h1 {
+  margin: 0px;
+  font-size: 45px;
+  color: #fff;
 }
 .card-container {
   display: flex;
   align-items: center;
   justify-content: center;
+    transform: scale(1.1);
+    margin-top: 2.5rem;
+
 }
 
 .card {
@@ -28,7 +38,12 @@
   align-items: center;
   background: #48CCAC;
   font-size: 10px;
+}
 
+.small-card h1{
+  font-size: 30px;
+  text-align: center;
+  color: #fff;
 }
 
 .big-card {
@@ -75,14 +90,14 @@ h1{
   align-items: center;
   justify-content: center;
   border-radius: 50px;
-  color: #f0dada;
+  color: #3a3a3a;
   height: 80px;
   width: 350px;
   font-size: 55px;
   /* border: 3px #ffffff solid; */
   margin-bottom: 30px;
   margin-top: 30px;
-  background: grey;
+  background: rgb(241, 241, 32);
 }
 .hot {
   color: Red; /* Change the color as per your preference */

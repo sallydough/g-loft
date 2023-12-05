@@ -1,10 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import "./Temperature.css";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
+import { PiPhoneCallFill } from "react-icons/pi";
+import {Link} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCirclePlus, faCircleMinus, faThermometer } from '@fortawesome/free-solid-svg-icons';
 
 const Temperature = () => {
+
+  // handle Help Button
+  const handleHelpClick = () => {
+    const phoneNumber = "+1234556778";
+    const userChoice = window.confirm("Do you want to call or send an SMS?");
+
+    if (userChoice) {
+      window.location.href = `tel:${phoneNumber}`;
+    } else {
+      window.location.href = `sms:${phoneNumber}`;
+    }
+    const telUrl = `tel:${phoneNumber}`;
+    window.location.href = telUrl;
+  };
+
+// change temp function
   const [temperatureValue, setTemperatureValue] = useState(20);
   const [temperatureColor, setTemperatureColor] = useState('normal');
 
@@ -69,6 +87,12 @@ const Temperature = () => {
 
   return (
     <div className="main">
+      <Link to="/controls" className="linkStyle">
+          <div className="nav-bar-logo">
+            <h1>Back To Loft Controls</h1>
+          </div>
+        </Link>
+      <div className="slide-call-1">
       <div className="card-container">
         {createCard('Decrease Temperature', faCircleMinus, decreaseTemperature, 'small-card', '10x')}
 
@@ -83,6 +107,11 @@ const Temperature = () => {
         </section>
 
         {createCard('Increase Temperature', faCirclePlus, increaseTemperature, 'small-card', '10x')}
+      </div>
+      <div onClick={handleHelpClick} className="call-help-1">
+            <PiPhoneCallFill size={70} />
+            <h1>Call Support</h1>
+          </div>
       </div>
     </div>
   );
